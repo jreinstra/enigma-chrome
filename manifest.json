@@ -8,6 +8,11 @@
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["content.js"],
-    "matches": ["https://www.nytimes.com//*"]
-  }]
+    "matches": ["https://www.nytimes.com//*"],
+      "run_at":    "document_start"
+  }],
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+    "permissions": [ "webRequest", "webRequestBlocking", "https://www.nytimes.com//*" ]
 }
