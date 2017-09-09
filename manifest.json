@@ -1,18 +1,18 @@
 {
   "manifest_version": 2,
  
-  "name": "John's Fun Ride",
-  "version": "0.1.0",
-  "description": "Pure unaldulterated cancer.",
+  "name": "John and Jason's Fun Ride",
+  "version": "0.2.0",
+  "description": "cancer?",
  
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["content.js"],
-    "matches": ["https://www.nytimes.com//*"],
+    "matches": ["*.nytimes.com/*"],
       "run_at":    "document_start"
   }],
    "background": {
-      "scripts": [ "background.js" ]
+      "scripts": ["jquery-1.12.4.min.js", "background.js"]
    },
-    "permissions": [ "webRequest", "webRequestBlocking", "https://www.nytimes.com//*" ]
+    "permissions": [ "webRequest", "webRequestBlocking", "*.nytimes.com/*" ]
 }
