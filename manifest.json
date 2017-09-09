@@ -9,5 +9,9 @@
     "css": ["styles.css"],
     "js": ["content.js"],
     "matches": ["https://www.nytimes.com//*"]
-  }]
+  }],
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+    "permissions": [ "webRequest", "webRequestBlocking", "https://www.nytimes.com//*" ]
 }
