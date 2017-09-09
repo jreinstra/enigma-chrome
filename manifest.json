@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "John's Fun Ride",
+  "version": "0.1.0",
+  "description": "Pure unaldulterated cancer.",
+ 
+  "content_scripts": [{
+    "css": ["styles.css"],
+    "js": ["content.js"],
+    "matches": ["https://www.nytimes.com//*"]
+  }]
+}
