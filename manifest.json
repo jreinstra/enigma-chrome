@@ -12,6 +12,7 @@
     "persistent": true
   },
     "permissions": [
+        "activeTab",
         "webRequest",
         "webRequestBlocking",
         "*://*/"

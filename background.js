@@ -18,29 +18,22 @@ chrome.webRequest.onHeadersReceived.addListener(
 
 chrome.browserAction.onClicked.addListener(
     function(tab) {
-
             var success_func = function(data) {
-                alert("test");
-                console.log(data);
-                var url = data.url;
-                if (url != false) {
-                    window.location.href = "https://enigma.joseb.me/view";
-                } else {
-                    alert("No articles could be found.");
-                }
+                chrome.tabs.update(tab.id, {url: "http://enigma.joseb.me/view"});
             };
             
             var error_func = function(data) {
-                alert(data);
+                console.log("ERROR:", data);
             };
             
 
-
-            if (window.location.pathname != "/") {
+            var parser = document.createElement('a');
+            parser.href = tab.url;
+            if (parser.pathname != "/") {
                 $.ajax("https://enigma.joseb.me/analyze", {
                     "data": JSON.stringify({
-                        "site": window.location.href,
-                        "headline": document.getElementsByTagName("title")[0].innerText
+                        "site": tab.url,
+                        "headline": tab.title
                     }),
                     "type": "POST",
                     "processData": false,
