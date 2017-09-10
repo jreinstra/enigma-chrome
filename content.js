@@ -2,10 +2,18 @@ document.open("text/html", "replace");
 
 function updateUrl(url, headline) {
     console.log(url, headline);
-    $.post("http://enigma.joseb.me/analyze", {"site": url, "headline": headline}, function(data) {
+    var success_func = function(data) {
         console.log(data);
-    }, function(err) {
-        console.log(err);
+        var url = data.url;
+        if(url === false) url = "https://example.com/";
+        $("#right").attr("src", url.replace("http://", "https://"));
+    }
+    $.ajax("https://enigma.joseb.me/analyze", {
+        "data": JSON.stringify({"site": url, "headline": headline}),
+        "type": "POST",
+        "processData": false,
+        "success": success_func,
+        "contentType": "application/json"
     });
 }
 

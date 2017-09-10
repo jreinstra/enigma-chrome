@@ -11,8 +11,8 @@
     "matches": ["https://*.vox.com/*", "https://*.huffingtonpost.com/*", "https://*.breitbart.com/*", "https://*.theblaze.com/*", "https://*.foxnews.com/*", "https://*.cnn.com/*", "https://*.wsj.com/*", "https://*.realclearpolitics.com/*", "https://*.forbes.com/*", "https://*.nbcnews.com/*", "https://*.cbsnews.com/*", "https://*.bloomberg.com/*", "https://*.politico.com/*", "https://*.thewashingtonpost.com/*", "https://*.nytimes.com/*", "https://*.nypost.com/*", "https://*.bluelivesmatter.blue/*"],
       "run_at":    "document_start"
   }],
-   "background": {
-      "scripts": ["jquery-1.12.4.min.js", "background.js"]
-   },
-    "permissions": [ "webRequest", "webRequestBlocking"]
+  "background": {
+    "scripts": ["jquery-1.12.4.min.js", "background.js"]
+  },
+  "permissions": ["webRequest", "webRequestBlocking"]
 }
