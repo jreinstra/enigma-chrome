@@ -11,4 +11,3 @@ chrome.webRequest.onHeadersReceived.addListener(
   }, {
     urls: ["https://www.nytimes.com//*"]
   }, ["blocking", "responseHeaders"]);
-

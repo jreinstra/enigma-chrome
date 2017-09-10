@@ -2,10 +2,11 @@ document.open("text/html", "replace");
 
 function updateUrl(url, headline) {
     console.log(url, headline);
-    $.post("http://enigma.joseb.me/analyze", JSON.stringify({"site": url, "headline": headline}), function(data) {
+    $.post("http://enigma.joseb.me/analyze", {"site": url, "headline": headline}, function(data) {
         console.log(data);
-    })
-    //$("#right").attr("src"
+    }, function(err) {
+        console.log(err);
+    });
 }
 
 
@@ -17,11 +18,14 @@ document.write(html);
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     document.getElementById("left").onload = function () {
-        a = document.getElementById("left").contentDocument.getElementsByTagName('a');
+        var contentDoc = document.getElementById("left").contentDocument;
+        updateUrl(window.location.href, contentDoc.getElementsByTagName("title")[0].innerText);
+        a = contentDoc.getElementsByTagName('a');
         for (var i = 0; i < a.length; i++) {
-            a[i].onclick = function () {
-                updateUrl(a.href, document.getElementById("left").contentDocument.title.innerHTML);
-                return false;
+            a[i].onclick = function (e) {
+                console.log(e, e.parent);
+                updateUrl(e.target.href, e.target.innerText);
+                return true;
             };
         };
 }
