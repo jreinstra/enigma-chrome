@@ -11,6 +11,10 @@
     "scripts": ["background.js", "jquery-1.12.4.min.js"],
     "persistent": true
   },
+  "content_scripts" : [{
+        "matches": ["<all_urls>"],
+        "js" : ["content.js"]
+    }],
     "permissions": [
         "activeTab",
         "webRequest",

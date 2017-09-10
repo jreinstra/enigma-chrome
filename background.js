@@ -23,6 +23,7 @@ chrome.browserAction.onClicked.addListener(
             };
             
             var error_func = function(data) {
+                chrome.tabs.sendMessage(tab.id, { action: 'notFound' });
                 console.log("ERROR:", data);
             };
             
