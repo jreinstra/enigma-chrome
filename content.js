@@ -19,7 +19,7 @@ function updateUrl(url, headline) {
 
 
 var url = window.location.href;
-var html = '<div style="width: 50% !important; height:100%;"> <iframe id="left" style="width: 100%; height: 100%;" src="' + url + '"></iframe></div> <div style="width: 50% !important;"><iframe id="right" style="width: 100%; height: 100%;"></iframe></div>';
+var html = '<body><div style="width: 50% !important;"> <iframe id="left" style="width: 100%; height: 100%;" src="' + url + '"></iframe></div> <div style="width: 50% !important;"><iframe id="right" style="width: 100%; height: 100%;"></iframe></div>';
 
 
 document.write(html);
