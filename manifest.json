@@ -4,7 +4,6 @@
   "name": "John and Jason's Fun Ride",
   "version": "0.2.0",
   "description": "cancer?",
- "content_security_policy": "default-src *",
   "content_scripts": [{
     "css": ["styles.css"],
     "js": ["jquery-1.12.4.min.js", "content.js"],
@@ -16,7 +15,6 @@
     "persistent": true
   },
     "permissions": [
-        "storage",
         "webRequest",
         "webRequestBlocking",
         "*://*/"
